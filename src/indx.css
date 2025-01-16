@@ -1,11 +1,109 @@
 
-table{
-  border-collapse: collapse;
-  max-width: 900px;
-  width: 100%;
-  margin: 2rem,auto;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-font: "Roboto", sans-serif;
+  --heading-font: "Georgia", serif;
+  --text-color-dark: rgba(0, 0, 0, 0.8);
+  --bg-color-dark: #1e1e1e;
+  --primary-color: #ff5e5e;
+  --secondary-color: #3bbdff;
+  
+  font-family: var(--primary-font);
+  line-height: 1.75;
+  font-weight: 300;
+  
+  color-scheme: light dark;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  
+  font-smoothing: always;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
 }
-table th, table td{
-  border: 1px solid white;
-  padding: 8px;
+
+body {
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-color-dark);
+}
+
+h1 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+a {
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+a:hover {
+  color: #ff3333;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+button {
+  padding: 12px 24px;
+  background-color: var(--secondary-color);
+  border: 2px solid transparent;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  color: #fff;
+}
+button:hover {
+  background-color: #3a97d6;
+  border-color: var(--primary-color);
+}
+
+button:focus {
+  outline: 3px dotted #ff5e5e;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color-dark: #fafafa;
+    --text-color-dark: #333;
+    --primary-color: #007bff;
+    --secondary-color: #00c851;
+  }
+  body {
+    background-color: var(--bg-color-dark);
+  }
+  h1 {
+    color: var(--primary-color);
+  }
+  a:hover {
+    color: #0056b3;
+  }
+  button {
+    background-color: var(--secondary-color);
+  }
+}
+
+.table {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
